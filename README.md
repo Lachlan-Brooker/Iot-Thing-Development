@@ -24,7 +24,6 @@ buzzer = PWM(Pin(15))
 buzzer.freq(1000) 
 buzzer.duty_u16(0)
 
-try:
     while True:
         pot_value = potentiometer.read_u16()
         frequency = int(500 + (pot_value / 65535) * 1500)
