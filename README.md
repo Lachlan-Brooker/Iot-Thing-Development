@@ -15,14 +15,14 @@ writing code.
 
 Code for IOT thing -->
 
-from machine import Pin, ADC, PWM
-import time
+    from machine import Pin, ADC, PWM
+    import time
 
-potentiometer = ADC(Pin(26))
+    potentiometer = ADC(Pin(26))
 
-buzzer = PWM(Pin(15))
-buzzer.freq(1000) 
-buzzer.duty_u16(0)
+    buzzer = PWM(Pin(15))
+    buzzer.freq(1000) 
+    buzzer.duty_u16(0)
 
     while True:
         pot_value = potentiometer.read_u16()
@@ -35,6 +35,6 @@ buzzer.duty_u16(0)
 
         time.sleep(0.1)
 
-except KeyboardInterrupt:
+    except KeyboardInterrupt:
     buzzer.duty_u16(0)
     print("Program stopped by user")
